@@ -38,9 +38,21 @@ USE_TZ = True
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
+#DATABASES = {
+#    'default': env.db('DATABASE_URL', default='postgres:///c_insta_db'),
+#}
+
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///c_insta'),
+    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'c_insta_db',
+        'USER': 'postgres',
+        'PASSWORD': 'welcome1!',
+        'HOST': '192.168.204.131',
+        'PORT': '5432',
+    }
 }
+
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # URLS
@@ -63,7 +75,7 @@ DJANGO_APPS = [
     'django.contrib.admin',
 ]
 THIRD_PARTY_APPS = [
-    'crispy_forms',
+#    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -72,6 +84,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'c_insta.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
+    'c_insta.images.apps.ImagesConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
