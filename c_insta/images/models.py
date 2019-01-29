@@ -28,7 +28,7 @@ class Comment(TimeStampedModel):
     creator = models.ForeignKey(user_models.User, null=True, on_delete=models.CASCADE)
     image = models.ForeignKey(Image, null=True, on_delete=models.CASCADE)
 
-class Like(TimeoutError):
+class Like(TimeStampedModel):
 
     """ Like Model """
 
