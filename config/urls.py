@@ -19,6 +19,10 @@ urlpatterns = [
         "users/",
         include("c_insta.users.urls", namespace="users"),
     ),
+    path(
+        "images/",
+        include("c_insta.images.urls", namespace="images"),
+    ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(
