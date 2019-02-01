@@ -6,32 +6,24 @@ from . import models, serializers
 
 # Create your views here.
 
-class ListAllImages(APIView):
-
-    def get(self, request, format=None):  # it will only be called when there is a get call over http.
-
-        all_images = models.Image.objects.all()
-
-        serializer = serializers.ImageSerializer(all_images, many=True)
-
-        return Response(data=serializer.data)
-
-class ListAllComments(APIView):
+class Feed(APIView):
 
     def get(self, request, format=True):
 
-        all_comments = models.Comment.objects.all()
+        user = request.user
 
-        serializer =  serializers.CommentSerializer(all_comments, many=True)
+        following_users = user.following.all()
 
-        return Response(data=serializer.data)
+        image_list = []
 
-class ListAllLikes(APIView):
+        for following_user in following_users:
 
-    def get(self, request, format=True):
+            user_images = following_user.images.all()[:2]
 
-        all_likes = models.Like.objects.all()
+            for image in user_images:
 
-        serializer = serializers.LikeSerializer(all_likes, many=True)
+                image_list.append(image)
 
-        return Response(data=serializer.data)
+        print(image_list)
+
+        return Response(status=200)
