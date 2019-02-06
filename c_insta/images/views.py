@@ -51,7 +51,7 @@ class LikeImage(APIView):
             )
             preexisting_like.delete()
 
-            return Response(status=HTTP_204_NO_CONTENT)
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
         except models.Like.DoesNotExist:
             models.Like.objects.create(
