@@ -49,7 +49,7 @@ class LikeImage(APIView):
                 creator=user,
                 image=found_image
             )
-            return Response(status=status.HTTP_304_NOT_MODIFIED)
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
         except models.Like.DoesNotExist:
             models.Like.objects.create(
