@@ -263,3 +263,4 @@ SOCIALACCOUNT_ADAPTER = 'c_insta.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+TAGGIT_CASE_INSENSITIVE = True
