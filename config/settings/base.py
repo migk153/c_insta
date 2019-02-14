@@ -85,7 +85,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'c_insta.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
-    'c_insta.images.apps.ImagesConfig',
+    'c_insta.images.apps.ImagesConfig', # images app
+    'c_insta.notifications.apps.NotificationsConfig', # notifications app
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
