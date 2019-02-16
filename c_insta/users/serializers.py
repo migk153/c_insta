@@ -6,10 +6,14 @@ from c_insta.images import serializers as images_serializers
 class UserProfileSerializer(serializers.ModelSerializer):
 
     images = images_serializers.CountImageSerializer(many=True)
+    post_count = serializers.ReadOnlyField()  # made by methods. Not real model elements
+    followers_count = serializers.ReadOnlyField()  # made by methods. Not real model elements
+    following_count = serializers.ReadOnlyField()  # made by methods. Not real model elements
 
     class Meta:
         model = models.User
         fields = (
+            'profile_image',
             'username',
             'name',
             'bio',
@@ -17,7 +21,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'post_count',
             'followers_count',
             'following_count',
-            'images'
+            'images',
         )
 
 
@@ -29,5 +33,5 @@ class ListUserSerializer(serializers.ModelSerializer):
             'id',
             'profile_image',
             'username',
-            'name'
+            'name',
         )

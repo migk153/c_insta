@@ -226,7 +226,7 @@ class ImageDetail(APIView):
 
         if serializer.is_valid():
 
-            serializer.save(creator=user)
+            serializer.save()
 
             return Response(data=serializer.data, status=status.HTTP_204_NO_CONTENT)
 
