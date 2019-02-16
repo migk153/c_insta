@@ -90,13 +90,14 @@ class UserProfile(APIView):
                 found_user, data=request.data, partial=True)
 
             if serializer.is_valid():
+
                 serializer.save()
 
                 return Response(data=serializer.data, status=status.HTTP_200_OK)
 
             else:
 
-                return Response(data=serializer.data, status=status.HTTP_400_BAD_REQUEST)
+                return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserFollowers(APIView):
