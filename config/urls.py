@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
-    path("api-token-auth/", obtain_jwt_token),
+    path("rest-auth/", include('rest_auth.urls')),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
