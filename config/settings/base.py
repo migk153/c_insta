@@ -81,6 +81,7 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'taggit',
+    'taggit_serializer',
 ]
 LOCAL_APPS = [
     'c_insta.users.apps.UsersAppConfig',
