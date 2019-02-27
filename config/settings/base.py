@@ -47,8 +47,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'c_insta_db',
         'USER': 'postgres',
-        'PASSWORD': 'welcome1!',
-        'HOST': '192.168.204.131',
+        'PASSWORD': 'welcome1',
+        'HOST': '192.168.204.133',
         'PORT': '5432',
     }
 }
@@ -76,16 +76,17 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
 #    'crispy_forms',
-    'allauth',
-    'allauth.account',
+    'allauth', # registration
+    'allauth.account', # registration
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
-    'rest_framework',
+    'allauth.socialaccount.providers.facebook', # registration
+    'rest_framework', # REST framework
     'rest_framework.authtoken',
-    'taggit',
-    'taggit_serializer',
-    'rest_auth',
-    'rest_auth.registration',
+    'taggit', # Tags for the photos
+    'taggit_serializer', # tag serializer
+    'rest_auth', # rest auth
+    'rest_auth.registration', # enable registraiton
+    'corsheaders', # To accept requests from React
 ]
 LOCAL_APPS = [
     'c_insta.users.apps.UsersAppConfig',
@@ -150,6 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -166,6 +168,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('frontend', 'build', 'static'))
 ]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
@@ -283,3 +286,7 @@ REST_FRAMEWORK = {
 REST_USE_JWT = True
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+SOCIALACCOUNT_QUERY_EMAIL =  True
+
+CORS_ORIGIN_ALLOW_ALL = True
