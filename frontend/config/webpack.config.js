@@ -450,7 +450,7 @@ module.exports = function(webpackEnv) {
                 {
                   loader: require.resolve("sass-loader"),
                   options: {
-                    data: `@import "${paths.appSrc}/config/_variable.scss";`,
+                    data: `@import "${paths.appSrc}/config/_variables.scss";`,
                     sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment
                   }
                 }
