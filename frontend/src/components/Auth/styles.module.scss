@@ -1,0 +1,61 @@
+.auth{
+    //border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    //width: 100%;
+    max-width: $max-page-width;
+    margin: 0 auto;
+    margin-top: 30px;
+    align-items: center;
+    .column{
+        flex-wrap: wrap;
+        width: 40%;
+        &:last-child{
+            width: 50%;
+            margin-left: 35px;
+        }
+        .phone-img {
+            width: 100%;
+        }
+        .app-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 35px;
+            .appstores{
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                width: 100%;
+                margin-top: 25px;
+                align-items: center;
+                flex-wrap: wrap;
+                img {
+                    &:first-child{
+                        width: 120px;
+                        margin-bottom: 20px;
+                        margin-right: 10px;
+                    }
+                    &:last-child{
+                        width: 120px;
+                        margin: -16px 10px 5px 0px;
+                    }
+                }
+            }
+        }
+        .white-box{
+            text-align: center;
+            padding: 15px;
+            @include boxBorder(no);
+            .change-link{
+                color: $light-blue;
+                cursor: pointer;
+            }
+            p {
+                margin: 15px;
+            }
+
+        }
+    }
+}
