@@ -1,19 +1,49 @@
 .auth{
     //border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    //width: 100%;
+    width: 100%;
     max-width: $max-page-width;
     margin: 0 auto;
-    margin-top: 30px;
+    display: flex;
+    min-height: 100%;
+    margin-top: 35px;
+    justify-content: center;
     align-items: center;
+    @include breakpoint("phone"){
+        margin-top: 10px;
+    }
     .column{
-        flex-wrap: wrap;
+        //border: 1px solid black;
         width: 40%;
+        @include breakpoint("phone"){
+            &:first-child{
+                display: none;
+            }
+            // &:last-child{
+            //     width: 70%;
+            //     justify-content: center;
+            // }
+        }
+        @include breakpoint("tablet"){
+            &:first-child{
+                display: none;
+            }
+            // &:last-child{
+            //     width: 45%;
+            //     justify-content: center;
+            // }
+        }
         &:last-child{
-            width: 50%;
+            width: 38%;
             margin-left: 35px;
+            @include breakpoint("phone"){
+                width: 90%;
+                margin: 0;
+            }
+            @include breakpoint("tablet"){
+                width: 70%;
+                max-width: 350px;
+                margin: 0;
+            }
         }
         .phone-img {
             width: 100%;
@@ -24,21 +54,19 @@
             align-items: center;
             margin-top: 35px;
             .appstores{
+                margin-top: 25px;
                 display: flex;
                 justify-content: center;
                 flex-direction: row;
-                width: 100%;
-                margin-top: 25px;
                 align-items: center;
                 flex-wrap: wrap;
                 img {
+                    width: 120px;
                     &:first-child{
-                        width: 120px;
                         margin-bottom: 20px;
                         margin-right: 10px;
                     }
                     &:last-child{
-                        width: 120px;
                         margin: -16px 10px 5px 0px;
                     }
                 }
@@ -48,18 +76,26 @@
             text-align: center;
             padding: 15px;
             @include boxBorder(no);
+            @include breakpoint("phone"){
+                background-color: transparent;
+                border: 0;
+            }
             .change-link{
                 color: $light-blue;
                 cursor: pointer;
             }
-            p {
+            .text {
                 margin: 15px;
             }
-            img {
-                width: 100%;
-                max-width: 300px;
-            }
-
         }
-    }
+        .form-box {
+            //border: 1px solid black;
+            margin-bottom: 10px;
+            padding: 0 40px;
+            padding-top: 30px;
+            img {
+                height: 60px;
+            }
+        }
+    }        
 }
