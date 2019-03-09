@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './styles.module.scss';
+import PropTypes from "prop-types";
 import { LoginForm, SignupForm } from "components/AuthForms";
 
 const Auth = (props, context) => (
@@ -16,21 +17,21 @@ const Auth = (props, context) => (
             <div className={styles.whiteBox}>
             {props.action === "login" && (
                                 <p>
-                                    Don't have an account?{" "}
+                                    {context.t("Don't have an account?")}{" "}
                                     <span onClick={props.changeAction} className={styles.changeLink}>
-                                    Sign up
+                                    {context.t("Sign up")}
                                     </span>
                                 </p>)}
             {props.action === "signup" && (
                                 <p>
-                                    Have an account?{" "}
+                                    {context.t("Have an account?")}{" "}
                                     <span onClick={props.changeAction} className={styles.changeLink}>
-                                    Log in
+                                    {context.t("Log in")}
                                     </span>
                                 </p>)}
             </div>
             <div className={styles.appBox}>
-                <span>Get the App</span>
+                <span>{context.t("Get the App")}</span>
                 <div className={styles.appstores}>
                     <img src={require("images/ios.png")} alt='Download it from the Apple Appstore'/>
                     <img src={require("images/android.png")} alt="Download it on the Apple Appstore"/>
@@ -39,5 +40,9 @@ const Auth = (props, context) => (
         </div>
     </main>
 );
+
+Auth.contextTypes = {
+    t: PropTypes.func.isRequired
+}
 
 export default Auth;

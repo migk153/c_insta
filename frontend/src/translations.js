@@ -1,5 +1,30 @@
 export const translations = {
-    es: {
-        "Login in": "Iniciar Sesion"
-    }
+  'kr': {
+    'Don\'t have an account?': '계정이 없으신가요?',
+    'Sign up': '가입하기',
+    'Have an account?': '계정이 있으신가요?',
+    'Log in': '',
+    'Get the App': '어플리케이션 다운로드',
+    'Username': '계정명',
+    'Password': '비밀번호',
+    'Log in with Facebook': 'Facebook으로 로그인 하기',
+    'Forgot password?': '비밀번호를 잊으셨나요?',
+    'Sign up to see photos and videos from your friends.': '친구들의 사진과 영상을 보려면 가입하세요.',
+    'or': '또는',
+    'Email': '이메일',
+    'Full name': '이름',
+    'By signing up, you agree to our': '가입하시면 다음에 동의한 것으로 간주됩니다.',
+    'Terms & Privacy Policy.': '약관 & 개인정보처리방침',
+    'About Us': 'Clone insta정보',
+    'Support': '지원',
+    'Blog': '블로그',
+    'Press': '홍보 센터',
+    'Jobs': '채용 정보',
+    'Privacy': '개인정보처리방침',
+    'Terms': '약관',
+    'Directory': '디렉토리',
+    'Language': '언어',
+  },
+  'options': {
+  },
 }
