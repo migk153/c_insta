@@ -1,28 +1,9 @@
 import React from "react";
 import LogoFacebook from "react-ionicons/lib/LogoFacebook";
 import PropTypes from "prop-types";
-import styles from "./styles.module.scss";
+import styles from "components/shared/formStyles.module.scss"
 
-export const LoginForm = (props, context) => (
-    <div className={styles.formComponent}>
-        <form className={styles.form}>
-            <input type="text" placeholder={context.t("Username")} className={styles.textInput} /> 
-            <input type="password" placeholder={context.t("Password")} className={styles.textInput} /> 
-            <input type="submit" placeholder={context.t("Log in")} className={styles.button} /> 
-        </form>
-        <span className={styles.divider}>{context.t("or")}</span>
-        <span className={styles.facebookLink}>
-            <LogoFacebook fontSize="20px" color="#385185" />
-            {context.t("Log in with Facebook")}</span>
-        <span className={styles.forgotLink}>{context.t("Forgot password?")}</span>
-    </div>
-);
-
-LoginForm.contextTypes = {
-    t: PropTypes.func.isRequired
-}
-
-export const SignupForm = (props, context) => (
+const SignupForm = (props, context) => (
     <div className={styles.formComponent}>
         <h3 className={styles.signupHeader}>{context.t("Sign up to see photos and videos from your friends.")}</h3>
         <button className={styles.button}>
@@ -45,3 +26,5 @@ export const SignupForm = (props, context) => (
 SignupForm.contextTypes = {
     t: PropTypes.func.isRequired
 }
+
+export default SignupForm;
