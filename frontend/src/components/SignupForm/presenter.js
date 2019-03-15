@@ -9,7 +9,7 @@ const SignupForm = (props, context) => (
         <h3 className={styles.signupHeader}>{context.t("Sign up to see photos and videos from your friends.")}</h3>
         <FacebookLogin
             appId="322789175044988"
-            autoLoad={true}
+            autoLoad={false}
             fields="name,email,picture"
             cssClass={styles.facebookLink}
             callback={props.handleFacebookLogin}

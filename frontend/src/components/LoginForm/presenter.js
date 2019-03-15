@@ -28,7 +28,7 @@ const LoginForm = (props, context) => (
             {context.t("Log in with Facebook")} */}
         <FacebookLogin
             appId="322789175044988"
-            autoLoad={true}
+            autoLoad={false}
             fields="name,email,picture"
             cssClass={styles.facebookLink}
             callback={props.handleFacebookLogin}
