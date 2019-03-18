@@ -21,18 +21,21 @@ const SignupForm = (props, context) => (
             <input type="email"
              placeholder={context.t("Email")}
               className={styles.textInput}
-              name="email"
+              value={props.emailValue}
               onChange={props.handleInputChange}
+              name="email"
               />
             <input type="text"
              placeholder={context.t("Full name")}
               className={styles.textInput}
-              name="fullname"
               onChange={props.handleInputChange}
+              value={props.nameValue}
+              name="name"
               />
             <input type="username"
              placeholder={context.t("Username")}
               className={styles.textInput}
+              value={props.usernameValue}
               name="username"
               onChange={props.handleInputChange}
               />
@@ -41,6 +44,7 @@ const SignupForm = (props, context) => (
               className={styles.textInput}
               name="password"
               onChange={props.handleInputChange}
+              value={props.passwordValue}
               />
             <input type="submit" placeholder={context.t("Sign up")} className={styles.button}/>
         </form>
@@ -53,7 +57,7 @@ const SignupForm = (props, context) => (
 
 SignupForm.propTypes ={
     emailValue: PropTypes.string.isRequired,
-    fullnameValue: PropTypes.string.isRequired,
+    nameValue: PropTypes.string.isRequired,
     usernameValue: PropTypes.string.isRequired,
     passwordValue: PropTypes.string.isRequired,
     handleInputChange: PropTypes.func.isRequired,
